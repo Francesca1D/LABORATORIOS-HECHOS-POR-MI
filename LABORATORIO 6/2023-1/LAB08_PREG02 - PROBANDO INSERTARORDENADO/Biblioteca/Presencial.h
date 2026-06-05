@@ -17,6 +17,7 @@ public:
     void set_total(double total);
     void leePresencial(ifstream &arch);
     void imprimePresencial(ofstream &arch);
+    void operator = (Presencial &p);
 
 
 private:

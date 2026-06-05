@@ -27,6 +27,7 @@ public:
     void recorte();
     bool isnull();
     int cuentaVirtuales();
+    int buscarPos(Presencial aux, int cant_presencial);
 
 };
 

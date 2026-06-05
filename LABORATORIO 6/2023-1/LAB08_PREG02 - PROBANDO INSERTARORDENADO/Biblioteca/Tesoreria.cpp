@@ -44,13 +44,17 @@ void Tesoreria::cargaalumnos() {
         cout<<"Error al abrir el archivo de Alumnos.csv"<<endl;
         exit(1);
     }
-
+    Presencial aux;
     while (true) {
         arch>>tipo;
         if (arch.eof()) break;
         arch>>c;
         if (tipo == 'P') {
-            lpresencial[cant_presencial].leePresencial(arch);
+            aux.leePresencial(arch);
+            int posP = buscarPos(aux, cant_presencial);
+            for (int i = cant_presencial; i > posP; i--)
+                lpresencial[i] = lpresencial[i - 1];
+            lpresencial[posP]= aux;
             cant_presencial++;
         }
         if (tipo == 'S') {
@@ -69,7 +73,13 @@ void Tesoreria::cargaalumnos() {
     }
     recorte();
 }
-
+int Tesoreria::buscarPos(Presencial aux, int cant_presencial) {
+    int i=0;
+    for (i=0;i<cant_presencial;i++) {
+        if (lpresencial[i].get_codigo()<aux.get_codigo()) return i;
+    }
+    return i;
+}
 void Tesoreria::actualiza(int cred) {
 
 }

@@ -34,4 +34,12 @@ void Presencial::imprimePresencial(ofstream &arch) {
     arch<< recargo<< endl;
 }
 
+void Presencial:: operator = (Presencial &p) {
+    char cad[50];
+    p.get_nombre(cad);
+    set_nombre(cad);
+    set_codigo(p.get_codigo());
+    set_escala(p.get_escala());
+    set_total(p.get_total());
+}
 
