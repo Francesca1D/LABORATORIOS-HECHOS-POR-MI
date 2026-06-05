@@ -6,7 +6,7 @@ int main() {
     min<"ArchivosDeEntrada/TablaDeInfracciones.csv";
     min<="ArchivosDeEntrada/EmpresasRegistradas.csv";
     min>>"ArchivosDeSalida/Reporte2.txt";
-    
+
 
     return 0;
 }
