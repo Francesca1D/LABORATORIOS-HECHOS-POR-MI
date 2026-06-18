@@ -1,0 +1,13 @@
+//
+// Created by USER on 16/06/2026.
+//
+
+#ifndef EMERGENCIASPROG2_2026_1_NOURGENCIA_H
+#define EMERGENCIASPROG2_2026_1_NOURGENCIA_H
+
+
+class NoUrgencia {
+};
+
+
+#endif //EMERGENCIASPROG2_2026_1_NOURGENCIA_H
