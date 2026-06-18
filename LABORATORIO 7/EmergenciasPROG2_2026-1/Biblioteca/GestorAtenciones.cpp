@@ -15,7 +15,12 @@ GestorAtenciones::GestorAtenciones() {
 
 GestorAtenciones:: ~GestorAtenciones() {
     // cout << "Entrando destructor Gestor" << endl;
-    if (atenciones!=nullptr) delete []atenciones;
+    // if (atenciones!=nullptr) delete []atenciones;
+
+    for (int i = 0; i < cantidad_atenciones; i++)
+        delete atenciones[i];
+
+    delete [] atenciones;
 }
 
 int GestorAtenciones::get_cantidad_atenciones() const {

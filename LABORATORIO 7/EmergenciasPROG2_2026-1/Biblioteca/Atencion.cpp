@@ -12,7 +12,7 @@ Atencion::Atencion(){
 }
 
 Atencion:: ~Atencion(){
-    cout << "Entrando destructor Atencion" << endl;
+    // cout << "Entrando destructor Atencion" << endl;
     if (paciente!= nullptr) delete paciente;
     if (descripcion!= nullptr) delete descripcion;
 
