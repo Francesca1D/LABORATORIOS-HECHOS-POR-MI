@@ -3,3 +3,45 @@
 //
 
 #include "Utils.h"
+
+//Y la funcion era una de las que dieron en utils, char* int_a_str(int n) {}
+
+char *Utils::int_a_char(int n) {
+    char *buffer = new char[20];
+    int i = 0;
+
+    if (n == 0) {
+        buffer[i++] = '0';
+        buffer[i] = '\0';
+        return buffer;
+    }
+
+    int temp = n;
+    int pot = 1;
+
+    while (temp >= 10) {
+        temp /= 10;
+        pot *= 10;
+    }
+
+    while (pot > 0) {
+        int dig = n / pot;
+        buffer[i++] = dig + '0';
+        n %= pot;
+        pot /= 10;
+    }
+
+    buffer[i] = '\0';
+    return buffer;
+}
+
+//concateno el name y la hora y csv
+void Utils::construir_nombre_archivo(char *destino, const char *base, int hh) {
+    strcpy(destino, base);
+
+    char buffer_hh[10];
+    sprintf(buffer_hh, "%02d", hh);
+
+    strcat(destino, buffer_hh);
+    strcat(destino, ".csv");
+}
