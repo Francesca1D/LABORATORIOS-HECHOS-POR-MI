@@ -14,7 +14,8 @@ GestorAtenciones::GestorAtenciones() {
 }
 
 GestorAtenciones:: ~GestorAtenciones() {
-    if (atenciones!=nullptr) delete [] atenciones;
+    // cout << "Entrando destructor Gestor" << endl;
+    if (atenciones!=nullptr) delete []atenciones;
 }
 
 int GestorAtenciones::get_cantidad_atenciones() const {
@@ -47,9 +48,10 @@ void GestorAtenciones::procesar_dia(const char *fecha) {
     strcat(nombreArchivo,dd);
     strcat(nombreArchivo,"/");
 
-    atenciones = new Atencion*[150];
+    atenciones = new Atencion*[250];
     for (int h=0; h<24;h++)
         cargarAtenciones(nombreArchivo,h);
+    // cout << "Fin de carga" << endl;
 }
 // cout<<nombreArchivo<<endl;
 //concateno el name y la hora y csv
@@ -81,7 +83,6 @@ void GestorAtenciones::cargarAtenciones(const char *nombre_archivo, int hora) {
         if (tip==1) tipo = 'E';
         if (tip==2) tipo = 'U';
         if (tip==3) tipo = 'N';
-
         atenciones[cantidad_atenciones]= reservar_memoria_atencion(tipo,arch);
         atenciones[cantidad_atenciones]->set_hora(hora);
         cantidad_atenciones++;
@@ -103,11 +104,11 @@ Atencion * GestorAtenciones::reservar_memoria_atencion(char tipo, ifstream &arch
         ate = new Urgencia;
     if (tipo == 'N')
         ate = new NoUrgencia;
-    // return atenciones;
+
     ate->lee(arch);
     return ate;
 }
-
+ // return atenciones;
 void GestorAtenciones::generar_reporte_diario(const char *nombre_reporte) {
     ofstream arch(nombre_reporte,ios::out);
     if (not arch.is_open()) {

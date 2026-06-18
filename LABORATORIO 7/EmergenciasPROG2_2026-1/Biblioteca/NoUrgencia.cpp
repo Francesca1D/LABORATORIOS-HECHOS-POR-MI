@@ -38,8 +38,8 @@ void NoUrgencia::set_especialidad(const char *cad){
 
 void NoUrgencia::lee(ifstream &arch) {
     Atencion::lee(arch);
-    char c,cad[50];
-    arch.getline(cad,50,',');
+    char c,cad[100];
+    arch.getline(cad,100,',');
     set_especialidad(cad);
     arch>>es_consulta_programada;
 }

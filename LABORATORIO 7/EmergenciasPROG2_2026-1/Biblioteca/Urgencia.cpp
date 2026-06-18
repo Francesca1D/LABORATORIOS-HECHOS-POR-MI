@@ -35,8 +35,8 @@ void Urgencia::set_zona_lesion(const char *cad){
 
 void Urgencia::lee(ifstream &arch) {
     Atencion::lee(arch);
-    char c,cad[30];
-    arch.getline(cad,30,',');
+    char c,cad[100];
+    arch.getline(cad,100,',');
     set_zona_lesion(cad);
     arch>>necesita_rx;
 

@@ -12,6 +12,7 @@ Atencion::Atencion(){
 }
 
 Atencion:: ~Atencion(){
+    cout << "Entrando destructor Atencion" << endl;
     if (paciente!= nullptr) delete paciente;
     if (descripcion!= nullptr) delete descripcion;
 
@@ -63,11 +64,11 @@ void Atencion::set_descripcion(const char *cad){
 // 1,2007,Sofia Rojas,Accidente Vehicular Grave,0,0
 
 void Atencion::lee(ifstream &arch) {
-    char c, cad[30];
+    char c, cad[100];
     arch>>codigo>>c;
-    arch.getline(cad,30,',');
+    arch.getline(cad,100,',');
     set_paciente(cad);
-    arch.getline(cad,30,',');
+    arch.getline(cad,100,',');
     set_descripcion(cad);
 
 }
