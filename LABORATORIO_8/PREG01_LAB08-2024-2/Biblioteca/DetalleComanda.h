@@ -15,7 +15,7 @@ public:
     DetalleComanda();
     virtual ~DetalleComanda();
     int get_id() const;
-    void set_id(int id);
+    void set_id(int id);Z
 
     void leecomandas(ifstream &arch);
     void imprimecomandas(ofstream &arch);

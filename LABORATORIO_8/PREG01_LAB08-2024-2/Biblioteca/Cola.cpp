@@ -31,7 +31,6 @@ void Cola::cargacola(ifstream &arch) {
         encola(nuevo);
     }
 }
-
 void Cola::encola(Nodo *nuevo) {
     if (cabeza == nullptr) {
         cola = nuevo;
