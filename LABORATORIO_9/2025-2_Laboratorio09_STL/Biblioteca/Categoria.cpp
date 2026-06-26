@@ -4,6 +4,8 @@
 
 #include "Categoria.h"
 
+#include <iomanip>
+
 Categoria::Categoria(){
 
 }
@@ -58,5 +60,12 @@ void Categoria::operator >>(ifstream &arch){
 }
 
 void Categoria::operator <<(ofstream &arch){
-    arch<<codigo<<" "<<nombre<<" "<<descripcion<<endl;
+    arch<<setw(3)<<' '<<"CODIGO:"<< setw(7)<<' '<<codigo<<endl;
+    arch<<setw(3)<<' '<<"NOMBRE:"<<setw(7)<<' '<<nombre<<endl;
+    arch<<setw(3)<<' '<<"DESCRIPCION: "<<descripcion<<endl;
+
+}
+
+bool Categoria::operator <(const Categoria &inf) const{
+    return codigo<inf.codigo;
 }

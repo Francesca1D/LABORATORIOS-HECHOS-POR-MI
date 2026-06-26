@@ -50,6 +50,11 @@ void Comentario::operator >>(ifstream &arch){
 }
 
 void Comentario::operator <<(ofstream &arch){
+    // arch<<canal<<" "<<comentario<<endl;
     arch<<canal<<" "<<comentario<<endl;
+}
+
+bool Comentario::operator <(const Comentario &com) const {
+    return canal<com.canal;
 }
 

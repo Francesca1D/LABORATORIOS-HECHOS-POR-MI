@@ -27,6 +27,7 @@ public:
     void operator=(const Comentario &orig);
     void operator >>(ifstream &arch);
     void operator <<(ofstream &arch);
+    bool operator <(const Comentario &com) const;
 
 };
 

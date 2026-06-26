@@ -6,6 +6,8 @@
 #define INC_2025_2_LABORATORIO09_STL_STREAMER_H
 
 #include <fstream>
+#include <list>
+#include <map>
 #include <vector>
 
 #include "Categoria.h"
@@ -23,7 +25,7 @@ private:
     vector<class Etiqueta> etiquetasVector;
     string idioma;
 
-    vector<string> comentarios;
+    vector<string> coment; //string coment
 
 
 public:
@@ -41,7 +43,14 @@ public:
 
     void operator >>(ifstream &arch);
     void operator <<(ofstream &arch);
+    bool operator <(const Streamer &st) const;
 
+
+    void buscaryAsignarCategoria(list<class Categoria> categorias);
+    void buscarYAsignarEtiqueta(map<string, class Etiqueta, less<string>> etiquetas);
+    void buscarYAsignarComentarios(list<class Comentario>comentarios);
+
+    bool isIdioma(string idi);
 };
 
 

@@ -30,6 +30,7 @@ public:
     void operator =(const Categoria& orig);
     void operator >>(ifstream &arch);
     void operator <<(ofstream &arch);
+    bool operator <(const Categoria &inf) const;
 
 };
 

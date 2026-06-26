@@ -49,6 +49,7 @@ void Etiqueta::operator >>(ifstream &arch) {
 }
 
 void Etiqueta::operator <<(ofstream &arch) {
-    arch<<codigo<<" "<<nombre<<endl;
+    arch<<"CODIGO: "<<codigo;
+    arch<<"   NOMBRE: "<<nombre<<endl;
 }
 
