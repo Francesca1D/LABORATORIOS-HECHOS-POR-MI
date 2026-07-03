@@ -3,3 +3,18 @@
 //
 
 #include "Nodo.h"
+
+Nodo::Nodo() {
+    metrica=nullptr;
+    anterior=nullptr;
+    siguiente=nullptr;
+}
+
+Nodo:: ~Nodo() {
+    metrica.leeMetricas(arch);
+}
+
+void carganodo(ifstream &arch) {
+
+}
+

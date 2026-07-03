@@ -2,8 +2,7 @@
 // Created by USER on 18/06/2026.
 //
 
-#include "../Metrica.h"
-
+#include "Metrica.h"
 #include <cstring>
 
 Metrica::Metrica() {
